@@ -1,0 +1,61 @@
+
+<div class="grid-container">
+
+  <div class="item1" >
+<b>  <nav>SpaceX Launch Programs </nav>
+</b>
+  <h6 id="filter">Filters</h6>
+  <button id="launchYear" class="buttonLable">Launch Year</button>
+    <div class="buttonSpacing">
+      <div class="years" *ngFor="let year of Years">
+      <button class="buttonColor" (click)="getClick(year)">{{year}}</button>
+    </div>
+    </div>
+      <div id="SuccessfullLaunch"class="true">
+  <button  class="buttonLable">Successfull Launch</button><br>
+      <button  class="btnPadding buttonColor"    (click)="getTrue(true)" >True</button>
+      <button class="buttonColor"(click)="getTrue(false)" >false</button>
+          
+
+    </div>
+    <div class="true">
+  <button  class="buttonLable">Successfull Landing</button><br>
+     <button  class="btnPadding buttonColor"    (click)="getTrue(true)" >True</button>
+      <button class="buttonColor"(click)="getTrue(false)" >false</button>
+          
+
+    </div>
+  </div>
+<br>
+      <br>
+  <div id="spaceX" class="spaceX" >
+    <div *ngFor="let space of spaceXArry " class="spaceX-container">
+      <div class="imageSize">
+        <img src="{{space.links.mission_patch}}" alt="" srcset="" height="100px" width="130px" style="margin-top:5px;">
+
+      </div>
+      
+     <span class="name" >
+     <b>     <a >{{ space.mission_name}} #{{space.flight_number}}</a></b>
+    </span>
+    <span >
+     <b>Mission Ids:</b> 
+      <ul class="uiList" ><li><a>{{space.mission_id}}</a> </li></ul>
+    </span>
+    <span >
+      <b>Launch Year: </b> <a class="spanColor">{{space.launch_year}}</a>
+    </span>
+    <span >
+      <b>Successfull Launch:</b> <a  class="spanColor"> {{space.launch_success}}</a>
+    </span>
+    <span >
+      <b>Successfull Landing:</b> <a  class="spanColor"> {{space.launch_landing}}</a>
+    </span>
+
+    </div>
+<footer *ngIf= "dataFound">  <h4>Developed By: {{developerName}}</h4>
+</footer>
+  </div>
+  
+
+</div>
